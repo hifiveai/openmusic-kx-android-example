@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 31
+    //
+    defaultConfig {
+        applicationId "com.kx.kxsdksample"
+        minSdk 23
+        targetSdk 31
+        versionCode 4
+        versionName "1.1.0"
+        ndk {
+            abiFilters 'armeabi-v7a','arm64-v8a'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+        androidTest.setRoot('tests')
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+
+    api fileTree(include: ['*.jar','*.aar'], dir: 'libs')
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.preference:preference-ktx:1.1.1'
+    //okHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.4.0'
+    api "com.squareup.okhttp3:logging-interceptor:4.4.0"
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.3.1'
+
+    //actionSheet
+    implementation 'com.github.khoyron:Actionsheet-android:4'
+
+    //K歌SDK需要
+    implementation "org.apache.directory.studio:org.apache.commons.io:2.4"
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+
+    //HFOpenAPI
+    implementation "io.reactivex.rxjava2:rxjava:2.2.10"
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+    implementation "com.squareup.retrofit2:retrofit:2.6.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.6.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.6.0"
+
+    implementation 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如4.0.3
+}

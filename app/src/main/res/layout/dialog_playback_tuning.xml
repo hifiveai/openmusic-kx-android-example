@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:background="@drawable/rect_tuning"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35">
+
+        <!--伴奏-->
+        <LinearLayout
+            android:id="@+id/playback_tuning_acc_layout"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="伴奏"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/playback_tuning_acc_seek_bar"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:max="100"
+                android:maxHeight="2dp"
+                android:minHeight="2dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_tuning"
+                android:thumb="@drawable/thumb_tuning"
+                android:thumbOffset="0dp" />
+
+            <TextView
+                android:id="@+id/playback_tuning_acc_seek_tv"
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="100%"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <!--人声-->
+        <LinearLayout
+            android:id="@+id/playback_tuning_record_layout"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playback_tuning_acc_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="人声"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/playback_tuning_record_seek_bar"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:max="100"
+                android:maxHeight="2dp"
+                android:minHeight="2dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_tuning"
+                android:thumb="@drawable/thumb_tuning"
+                android:thumbOffset="0dp" />
+
+            <TextView
+                android:id="@+id/playback_tuning_record_seek_tv"
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="0%"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <!--美声-->
+        <LinearLayout
+            android:id="@+id/playback_tuning_reverb_layout"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playback_tuning_record_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="美声"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/playback_tuning_reverb_tips"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="美声已关闭，如需开启请插入耳机"
+                android:textAlignment="center"
+                android:textColor="@color/white_65"
+                android:textSize="11sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/playback_tuning_reverb_value_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <SeekBar
+                    android:id="@+id/playback_tuning_reverb_seek_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:max="100"
+                    android:maxHeight="2dp"
+                    android:minHeight="2dp"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/progress_tuning"
+                    android:thumb="@drawable/thumb_tuning"
+                    android:thumbOffset="0dp" />
+
+                <TextView
+                    android:id="@+id/playback_tuning_reverb_seek_tv"
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="0%"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--人声移动-->
+        <LinearLayout
+            android:id="@+id/playback_tuning_key_layout"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playback_tuning_reverb_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="人声移动"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/playback_tuning_key_minus"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/minus" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+
+                <View
+                    android:id="@+id/playback_tuning_seek_bar_mark_0"
+                    android:layout_width="1dp"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/seek_bar_def"
+                    app:layout_constraintLeft_toLeftOf="@id/playback_tuning_key_seek_bar"
+                    app:layout_constraintTop_toTopOf="@id/playback_tuning_key_seek_bar" />
+
+                <View
+                    android:id="@+id/playback_tuning_seek_bar_mark_1"
+                    android:layout_width="1dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/seek_bar_def"
+                    app:layout_constraintLeft_toLeftOf="@id/playback_tuning_seek_bar_mark_0"
+                    app:layout_constraintRight_toRightOf="@id/playback_tuning_seek_bar_mark_2"
+                    app:layout_constraintTop_toTopOf="@id/playback_tuning_key_seek_bar" />
+
+                <View
+                    android:id="@+id/playback_tuning_seek_bar_mark_2"
+                    android:layout_width="1dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/seek_bar_def"
+                    app:layout_constraintLeft_toLeftOf="@id/playback_tuning_seek_bar_mark_1"
+                    app:layout_constraintRight_toRightOf="@id/playback_tuning_seek_bar_mark_3"
+                    app:layout_constraintTop_toTopOf="@id/playback_tuning_key_seek_bar" />
+
+
+                <View
+                    android:id="@+id/playback_tuning_seek_bar_mark_3"
+                    android:layout_width="1dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/seek_bar_def"
+                    app:layout_constraintLeft_toLeftOf="@id/playback_tuning_seek_bar_mark_2"
+                    app:layout_constraintRight_toRightOf="@id/playback_tuning_seek_bar_mark_4"
+                    app:layout_constraintTop_toTopOf="@id/playback_tuning_key_seek_bar" />
+
+
+                <View
+                    android:id="@+id/playback_tuning_seek_bar_mark_4"
+                    android:layout_width="1dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/seek_bar_def"
+                    app:layout_constraintLeft_toLeftOf="@id/playback_tuning_seek_bar_mark_3"
+                    app:layout_constraintRight_toRightOf="@id/playback_tuning_seek_bar_mark_5"
+                    app:layout_constraintTop_toTopOf="@id/playback_tuning_key_seek_bar" />
+
+
+                <View
+                    android:id="@+id/playback_tuning_seek_bar_mark_5"
+                    android:layout_width="1dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/seek_bar_def"
+                    app:layout_constraintLeft_toLeftOf="@id/playback_tuning_seek_bar_mark_4"
+                    app:layout_constraintRight_toRightOf="@id/playback_tuning_seek_bar_mark_6"
+                    app:layout_constraintTop_toTopOf="@id/playback_tuning_key_seek_bar" />
+
+                <View
+                    android:id="@+id/playback_tuning_seek_bar_mark_6"
+                    android:layout_width="1dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/seek_bar_def"
+                    app:layout_constraintLeft_toLeftOf="@id/playback_tuning_seek_bar_mark_5"
+                    app:layout_constraintRight_toRightOf="@id/playback_tuning_seek_bar_mark_7"
+                    app:layout_constraintTop_toTopOf="@id/playback_tuning_key_seek_bar" />
+
+                <View
+                    android:id="@+id/playback_tuning_seek_bar_mark_7"
+                    android:layout_width="1dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/seek_bar_def"
+                    app:layout_constraintLeft_toLeftOf="@id/playback_tuning_seek_bar_mark_6"
+                    app:layout_constraintRight_toRightOf="@id/playback_tuning_seek_bar_mark_8"
+                    app:layout_constraintTop_toTopOf="@id/playback_tuning_key_seek_bar" />
+
+                <View
+                    android:id="@+id/playback_tuning_seek_bar_mark_8"
+                    android:layout_width="1dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@color/seek_bar_def"
+                    app:layout_constraintRight_toRightOf="@id/playback_tuning_key_seek_bar"
+                    app:layout_constraintTop_toTopOf="@id/playback_tuning_key_seek_bar" />
+
+
+                <SeekBar
+                    android:id="@+id/playback_tuning_key_seek_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:max="100"
+                    android:maxHeight="2dp"
+                    android:minHeight="2dp"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:progress="30"
+                    android:progressDrawable="@drawable/mark_progress_tuning"
+                    android:thumb="@drawable/thumb_tuning"
+                    android:thumbOffset="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <TextView
+                    android:id="@+id/playback_tuning_key_min_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-20"
+                    android:textColor="@color/white_36"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@id/playback_tuning_key_seek_bar"
+                    app:layout_constraintLeft_toLeftOf="@id/playback_tuning_key_seek_bar" />
+
+                <TextView
+                    android:id="@+id/playback_tuning_key_max_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textColor="@color/white_36"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@id/playback_tuning_key_seek_bar"
+                    app:layout_constraintRight_toRightOf="@id/playback_tuning_key_seek_bar" />
+
+                <TextView
+                    android:id="@+id/playback_tuning_key_tv"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="-20"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@id/playback_tuning_key_seek_bar"
+                    app:layout_constraintLeft_toLeftOf="@id/playback_tuning_key_seek_bar"
+                    app:layout_constraintRight_toRightOf="@id/playback_tuning_key_seek_bar" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-10"
+                    android:textColor="@color/white_36"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@id/playback_tuning_key_seek_bar"
+                    app:layout_constraintLeft_toLeftOf="@id/playback_tuning_key_min_tv"
+                    app:layout_constraintRight_toRightOf="@id/playback_tuning_key_tv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textColor="@color/white_36"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@id/playback_tuning_key_seek_bar"
+                    app:layout_constraintLeft_toLeftOf="@id/playback_tuning_key_tv"
+                    app:layout_constraintRight_toRightOf="@id/playback_tuning_key_max_tv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/playback_tuning_key_add"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:gravity="center|right"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/add" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

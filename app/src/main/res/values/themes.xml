@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.KXSDKSample" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@android:color/transparent</item>
+        <item name="colorOnPrimarySurface">@android:color/transparent</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@android:color/transparent</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color.
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.KXSDKSample.NoActionBar">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/noAnimation</item>
+    </style>
+
+    <style name="Theme.KXSDKSample.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.KXSDKSample.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
